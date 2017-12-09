@@ -1,10 +1,27 @@
 var todoList = {
-  todos: [],
+  todos: [{
+      todoText: "Item 1",
+      completed: false
+    },{
+      todoText: "Item 2",
+      completed: false
+    },{
+      todoText: "Item 3",
+      completed: true
+    }],
   displayTodos: function() {
-    console.log('My todos:');
-    for (var i = 0; i < this.todos.length; i++) {
-      console.log(this.todos[i].todoText);
-    };
+    // if this.todos.length === 0 (=== = 'is equal to': compares values in JS)
+    if (this.todos.length === 0) {
+      console.log('Your todo list is empty.');
+    } else {
+      for (var i = 0; i < this.todos.length; i++) {
+        if (this.todos[i].completed === true) {
+          console.log('(x) ', this.todos[i].todoText);
+        } else {
+          console.log('( ) ', this.todos[i].todoText);
+        }
+      }
+    }
   },
   addTodo: function(todoText) {
     this.todos.push({
@@ -27,16 +44,6 @@ var todoList = {
     this.displayTodos();
   }
 };
-
-
-
-
-
-
-
-
-
-
 
 // Before the exercise started - playing with for loops
 // Plain English
